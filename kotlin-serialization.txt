@@ -1,5 +1,9 @@
 [versions]
 kotlin = "2.0.20"
+kotlinSerialization = "1.7.3"
+
+[libraries]
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinSerialization" }
 
 [plugins]
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
@@ -13,4 +17,8 @@ plugins {
 Module:
 plugins {
     alias(libs.plugins.kotlin.serialization)
+}
+
+dependencies {
+    implementation(libs.kotlinx.serialization.json)
 }
