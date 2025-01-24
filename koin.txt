@@ -14,7 +14,6 @@ koin = [
 ]
 
 
-
 Module:
 dependencies {
     implementation(libs.bundles.koin)
