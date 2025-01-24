@@ -1,4 +1,5 @@
 [versions]
+kotlinxCoroutinesCore = "1.9.0"
 kotlinxCoroutinesAndroid = "1.9.0"
 
 [libraries]
