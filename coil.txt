@@ -17,6 +17,7 @@ coil = [
     "coil-mp"
 ]
 
+
 Module:
 dependencies {
     implementation(libs.bundles.coil)
