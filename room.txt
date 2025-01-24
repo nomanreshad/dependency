@@ -1,0 +1,38 @@
+[versions]
+ksp = "2.0.20-1.0.24"
+sqlite = "2.5.0-alpha11"
+room = "2.7.0-alpha11"
+
+[libraries]
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
+
+[plugins]
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+room = { id = "androidx.room", version.ref = "room" }
+
+
+Project:
+plugins {
+    alias(libs.plugins.ksp) apply false
+    alias(libs.plugins.room) apply false
+}
+
+Module:
+plugins {
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.room)
+}
+
+room {
+    schemaDirectory("$projectDir/schemas")
+}
+
+dependencies {
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.sqlite.bundled)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+}
