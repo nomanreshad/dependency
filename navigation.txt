@@ -1,0 +1,11 @@
+[versions]
+navigationCompose = "2.8.0-alpha10"
+
+[libraries]
+jetbrains-compose-navigation = { group = "org.jetbrains.androidx.navigation", name = "navigation-compose", version.ref= "navigationCompose"}
+
+
+Module:
+dependencies {
+    implementation(libs.jetbrains.compose.navigation)
+}
