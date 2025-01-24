@@ -1,0 +1,17 @@
+[versions]
+kotlin = "2.0.20"
+
+[plugins]
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+
+
+Project:
+plugins {
+    alias(libs.plugins.kotlin.serialization) apply false
+}
+
+Module:
+plugins {
+    alias(libs.plugins.kotlin.serialization)
+}
